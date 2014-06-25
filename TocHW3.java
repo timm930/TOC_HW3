@@ -40,7 +40,7 @@ public class TocHW3 {
 		//String url="http://www.datagarage.io/api/5365dee31bc6e9d9463a0057";
 		String url = args[0];
         
-        System.out.println("reading by url ...");
+        //System.out.println("reading by url ...");
         try {
             URL url_address = new URL( url );
             
@@ -62,7 +62,7 @@ public class TocHW3 {
             e.printStackTrace();
         }
         
-        System.out.println("Done");
+        //System.out.println("Done");
                    
 
 		/* put the json file into a jsonarray */
