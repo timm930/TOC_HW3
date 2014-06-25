@@ -18,7 +18,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class TocHW3 {
+public class TocHw3 {
 	public static boolean laterThan(int year1, int year2) {
 		if(year1/100 > year2/100) {
 			return true;
