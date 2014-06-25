@@ -1,5 +1,5 @@
 /*
-	name:ªL§Ê«Û
+	name:æ—å»·å½¥
 	student num:F74002159
 	decription:
 		download the json file from url which is 1st argument
@@ -44,7 +44,7 @@ public class TocHw3 {
         try {
             URL url_address = new URL( url );
             
-            // Åª¤Jºô­¶(¦r¤¸¦ê¬y)            
+            // è®€å…¥ç¶²é (å­—å…ƒä¸²æµ)            
             BufferedReader br = new BufferedReader(new InputStreamReader(url_address.openStream(), "UTF-8"));
             //BufferedReader br = new BufferedReader(new InputStreamReader(url_address.openStream(), "Big5"));
             BufferedWriter bw = new BufferedWriter(new FileWriter("data.json", false));    
@@ -72,8 +72,8 @@ public class TocHw3 {
 		double sum = 0;
 		int ctr = 0;
 		double avg_price = 0; 
-		//String arg1 = "¤j¦w°Ï";
-		//String arg2 = "´_¿³«n¸ô";
+		//String arg1 = "å¤§å®‰å€";
+		//String arg2 = "å¾©èˆˆå—è·¯";
 		//int arg3 = 103;
 		
 		Pattern township, road;
@@ -83,22 +83,22 @@ public class TocHw3 {
 		String tested2 = ".*"+args[2]+".*";
 		
 		for(int i=1; i<jsonRealPrice.length(); i++) {
-			//System.out.printf("%d : %s; %s; %d\n", jsonRealPrice.getJSONObject(i).get("Á`»ù¤¸"), jsonRealPrice.getJSONObject(i).get("¶mÂí¥«°Ï"), 
-					//jsonRealPrice.getJSONObject(i).get("¤g¦a°Ï¬q¦ì¸m©Î«Øª«°ÏªùµP"),  jsonRealPrice.getJSONObject(i).get("¥æ©ö¦~¤ë"));
+			//System.out.printf("%d : %s; %s; %d\n", jsonRealPrice.getJSONObject(i).get("ç¸½åƒ¹å…ƒ"), jsonRealPrice.getJSONObject(i).get("é„‰é®å¸‚å€"), 
+					//jsonRealPrice.getJSONObject(i).get("åœŸåœ°å€æ®µä½ç½®æˆ–å»ºç‰©å€é–€ç‰Œ"),  jsonRealPrice.getJSONObject(i).get("äº¤æ˜“å¹´æœˆ"));
 			
 			township = Pattern.compile(tested1);
-			matcher_ts = township.matcher(jsonRealPrice.getJSONObject(i).getString("¶mÂí¥«°Ï"));
+			matcher_ts = township.matcher(jsonRealPrice.getJSONObject(i).getString("é„‰é®å¸‚å€"));
 			road = Pattern.compile(tested2);
-			matcher_rd = road.matcher(jsonRealPrice.getJSONObject(i).getString("¤g¦a°Ï¬q¦ì¸m©Î«Øª«°ÏªùµP"));
+			matcher_rd = road.matcher(jsonRealPrice.getJSONObject(i).getString("åœŸåœ°å€æ®µä½ç½®æˆ–å»ºç‰©å€é–€ç‰Œ"));
 			
 			
 			
-			if(matcher_ts.find() && matcher_rd.find() && laterThan(jsonRealPrice.getJSONObject(i).getInt("¥æ©ö¦~¤ë"), Integer.valueOf(args[3])*100)) {
-				//System.out.printf("got one!!! : %s; %s; %d; %d\n", jsonRealPrice.getJSONObject(i).get("¶mÂí¥«°Ï"), 
-				//		jsonRealPrice.getJSONObject(i).getString("¤g¦a°Ï¬q¦ì¸m©Î«Øª«°ÏªùµP"), jsonRealPrice.getJSONObject(i).getInt("¥æ©ö¦~¤ë"), 
-				//		jsonRealPrice.getJSONObject(i).getInt("Á`»ù¤¸"));
+			if(matcher_ts.find() && matcher_rd.find() && laterThan(jsonRealPrice.getJSONObject(i).getInt("äº¤æ˜“å¹´æœˆ"), Integer.valueOf(args[3])*100)) {
+				//System.out.printf("got one!!! : %s; %s; %d; %d\n", jsonRealPrice.getJSONObject(i).get("é„‰é®å¸‚å€"), 
+				//		jsonRealPrice.getJSONObject(i).getString("åœŸåœ°å€æ®µä½ç½®æˆ–å»ºç‰©å€é–€ç‰Œ"), jsonRealPrice.getJSONObject(i).getInt("äº¤æ˜“å¹´æœˆ"), 
+				//		jsonRealPrice.getJSONObject(i).getInt("ç¸½åƒ¹å…ƒ"));
 				
-				sum = sum + jsonRealPrice.getJSONObject(i).getInt("Á`»ù¤¸");
+				sum = sum + jsonRealPrice.getJSONObject(i).getInt("ç¸½åƒ¹å…ƒ");
 				//System.out.printf("sum: %10.0f\n", sum);
 				ctr++;
 			}
